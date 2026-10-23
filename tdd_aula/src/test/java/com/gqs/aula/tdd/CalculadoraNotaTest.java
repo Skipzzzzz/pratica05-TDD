@@ -29,4 +29,18 @@ public class CalculadoraNotaTest {
         assertThrows(IllegalArgumentException.class,
                 () -> calc.calcularNotaFinal(35, 20, 30));
     }
+
+    @Test
+    void deveRejeitarA2MaiorQue30() {
+        CalculadoraNota calc = new CalculadoraNota();
+        assertThrows(IllegalArgumentException.class,
+                () -> calc.calcularNotaFinal(29, 30.5, 30));
+    }
+
+    @Test
+    void deveRejeitarA3MaiorQue40() {
+        CalculadoraNota calc = new CalculadoraNota();
+        assertThrows(IllegalArgumentException.class,
+                () -> calc.calcularNotaFinal(28, 20, 42));
+    }
 }
