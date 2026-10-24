@@ -1,7 +1,5 @@
 package com.gqs.aula.tdd;
 
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
 public final class CalculadoraNota {
 
     public static final double NOTA_MINIMA_APROVACAO = 70;
@@ -23,4 +21,7 @@ public final class CalculadoraNota {
         validarNota(a3, 40, "A3");
         return a1 + a2 + a3;
     }
+
+    public String situacao(double notaFinal, double frequencia) {
+    }        
 }

@@ -43,4 +43,26 @@ public class CalculadoraNotaTest {
         assertThrows(IllegalArgumentException.class,
                 () -> calc.calcularNotaFinal(28, 20, 42));
     }
+
+    @Test 
+    void deveAprovarComNotaEFrequenciaSuficientes() {
+        CalculadoraNota calc = new calculadoraNota();
+        assertEquals("Aprovado", calc.situacao(80, 90));
+    }
+
+    @Test 
+    void deveReprovarComNotaBaixa() {
+        CalculadoraNota calc = new calculadoranota();
+        assertEquals("Reprovado", calc,situacao(60, 90));
+    }
+    @Test
+    void deveReprovarPorFrequenciaMesmoComNotaAlta() {
+        CalculadoraNota calc = new CalculadoraNota();
+        assertEquals("Reprovado", calc.situacao(95, 74));
+    }
+    @Test 
+    void deveAprovarComFrequenciaExatamente75() {
+        CalculadoraNota calc = new CalculadoraNota();
+        assertEquals("Aprovado", calc.situacao(70, 75));
+    }
 }
